@@ -1,0 +1,39 @@
+package project0523;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+public class DeptApp2 {
+
+   public static void main(String[] args) {
+      String url = "jdbc:oracle:thin:@192.168.123.100:1521:orcl11";
+      String sql = "SELECT * FROM DEPT";
+      try {
+         Class.forName("oracle.jdbc.driver.OracleDriver");
+         Connection con = DriverManager.getConnection(url, "scott", "tiger");
+         Statement st = con.createStatement();
+         ResultSet rs = st.executeQuery(sql);
+
+         while (rs.next()) {
+            int detpno = rs.getInt("DEPTNO");
+            String dname = rs.getString("DNAME");
+            String loc = rs.getString("LOC");
+         
+            System.out.println("detpno : " + detpno);
+            System.out.println("dname : " + dname);
+            System.out.println("loc : " + loc);
+            System.out.println("---------------------------");
+         }
+
+         rs.close();
+         st.close();
+         con.close();
+      } catch (Exception e) {
+         e.printStackTrace();
+      }
+
+   }
+
+}

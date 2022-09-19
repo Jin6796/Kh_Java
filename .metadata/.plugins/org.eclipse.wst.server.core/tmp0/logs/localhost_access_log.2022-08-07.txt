@@ -1,0 +1,8 @@
+0:0:0:0:0:0:0:1 - - [07/Aug/2022:12:55:52 +0900] "GET /board3/boardList.pj?nowPage=2 HTTP/1.1" 200 10274
+0:0:0:0:0:0:0:1 - - [07/Aug/2022:12:55:52 +0900] "GET /images/bu_a.gif HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [07/Aug/2022:12:55:53 +0900] "GET /images/bu_b.gif HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [07/Aug/2022:12:55:54 +0900] "POST /board3/jsonBoardList.kh HTTP/1.1" 200 759
+0:0:0:0:0:0:0:1 - - [07/Aug/2022:12:55:54 +0900] "POST /board3/jsonBoardList.kh HTTP/1.1" 200 759
+0:0:0:0:0:0:0:1 - - [07/Aug/2022:12:56:02 +0900] "GET /board3/boardList.pj?nowPage=2 HTTP/1.1" 200 10274
+0:0:0:0:0:0:0:1 - - [07/Aug/2022:12:56:04 +0900] "POST /board3/jsonBoardList.kh HTTP/1.1" 200 759
+0:0:0:0:0:0:0:1 - - [07/Aug/2022:12:56:04 +0900] "POST /board3/jsonBoardList.kh HTTP/1.1" 200 759

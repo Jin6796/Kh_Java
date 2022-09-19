@@ -1,0 +1,8 @@
+127.0.0.1 - - [30/Aug/2022:11:30:36 +0900] "GET / HTTP/1.1" 200 205
+0:0:0:0:0:0:0:1 - - [30/Aug/2022:11:30:36 +0900] "GET /kh_exam/coffee/jQueryCoffee.html HTTP/1.1" 200 5160
+0:0:0:0:0:0:0:1 - - [30/Aug/2022:11:30:36 +0900] "GET /kh_exam/coffee/coffee.css?12 HTTP/1.1" 200 1135
+0:0:0:0:0:0:0:1 - - [30/Aug/2022:11:30:36 +0900] "GET /kh_exam/js/jquery.min.js HTTP/1.1" 200 97163
+0:0:0:0:0:0:0:1 - - [30/Aug/2022:11:30:36 +0900] "GET /kh_exam/coffee/images/CoffeeMaker1.gif HTTP/1.1" 200 17276
+0:0:0:0:0:0:0:1 - - [30/Aug/2022:11:30:36 +0900] "GET /kh_exam/coffee/images/coffeeMugWithBeans.jpg HTTP/1.1" 200 350776
+0:0:0:0:0:0:0:1 - - [30/Aug/2022:11:30:36 +0900] "GET /kh_exam/coffee/images/CoffeeMaker2.gif HTTP/1.1" 200 292211
+0:0:0:0:0:0:0:1 - - [30/Aug/2022:11:30:37 +0900] "GET /favicon.ico HTTP/1.1" 404 818

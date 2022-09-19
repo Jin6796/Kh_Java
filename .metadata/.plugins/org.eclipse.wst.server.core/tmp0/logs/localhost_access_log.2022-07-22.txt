@@ -1,0 +1,10 @@
+127.0.0.1 - - [22/Jul/2022:11:18:49 +0900] "GET / HTTP/1.1" 200 205
+0:0:0:0:0:0:0:1 - - [22/Jul/2022:11:19:17 +0900] "GET /index.hym HTTP/1.1" 404 816
+0:0:0:0:0:0:0:1 - - [22/Jul/2022:11:19:17 +0900] "GET /favicon.ico HTTP/1.1" 404 818
+0:0:0:0:0:0:0:1 - - [22/Jul/2022:11:19:23 +0900] "GET /index.gym HTTP/1.1" 200 -
+127.0.0.1 - - [22/Jul/2022:13:50:17 +0900] "GET / HTTP/1.1" 200 205
+127.0.0.1 - - [22/Jul/2022:13:50:18 +0900] "GET /WEB-INF/classes/com/mvc/step1/BoardController.java HTTP/1.1" 404 721
+127.0.0.1 - - [22/Jul/2022:13:50:19 +0900] "GET /index.gym?gubun=select&mem_id=tomato&mem_pw=123 HTTP/1.1" 200 143
+0:0:0:0:0:0:0:1 - - [22/Jul/2022:14:08:59 +0900] "GET /board-step1/boardList.jsp HTTP/1.1" 500 5298
+0:0:0:0:0:0:0:1 - - [22/Jul/2022:14:12:00 +0900] "GET /board-step1/XXXX.gym?gubun=select HTTP/1.1" 500 5599
+0:0:0:0:0:0:0:1 - - [22/Jul/2022:14:15:42 +0900] "GET /board-step1/XXXX.gym?gubun=select HTTP/1.1" 200 377

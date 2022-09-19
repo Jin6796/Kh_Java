@@ -1,0 +1,4 @@
+	public static void main(String[] args) {
+		While_3 w3 = new While_3();
+		w3.selftest();
+	}
