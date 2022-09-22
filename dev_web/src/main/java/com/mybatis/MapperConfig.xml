@@ -16,6 +16,8 @@
 		</environment>
 	</environments>
 	<mappers>
+		<mapper resource="com/mybatis/mapper/emp.xml" />
+		<mapper resource="com/mybatis/mapper/dept.xml" />
 		<mapper resource="com/mybatis/mapper/board.xml" />
 		<mapper resource="com/mybatis/mapper/auth.xml" />
 		<mapper resource="com/mybatis/mapper/member.xml" />

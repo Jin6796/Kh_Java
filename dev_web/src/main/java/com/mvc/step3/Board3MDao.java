@@ -14,9 +14,13 @@ public class Board3MDao {
 	// 물리적인 DB서버와의 연결
 	SqlSessionFactory sqlSessionFactory = null;
 	// 쿼리문 요청과 커밋 그리고 롤백 처리
-	SqlSession sqlSession = null;
+	static SqlSession sqlSession = null;
 	
 	public Board3MDao() {
+		// 전통적인 역할: 초기화
+		// myBatis레이어 설정 필요
+		// MapperConfig.xml(밴더정보, URL, username, password)
+
 		sqlSessionFactory = MyBatisCommonFactory.getSqlSessionFactory();
 	}
 	// 쿼리문의 아이디와 메소드 이름은 통일 시키는 게 좋음

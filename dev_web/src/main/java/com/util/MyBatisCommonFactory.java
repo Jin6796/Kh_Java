@@ -23,6 +23,9 @@ import org.apache.log4j.Logger;
  * 자바 설정 - Properties
  * XML 설정 - Spring2.0-3.0 (어노테이션은 2.5부터 제공됨 - 많이 부족 - servlet에 의존적 - 별로야)
  * 어노테이션 설정 - 자바설정 - 메이븐방식, 그레이들방식(코틀린사용-2019구글공식 인정-jetbrain)
+ *
+ * 나는 공통코드를 만들 수 있다|없다
+ * 클래스 조립기 처리 - 생성자 활용 [static 고려]
  */
 public class MyBatisCommonFactory {
 	static Logger logger = Logger.getLogger(MyBatisCommonFactory.class);
@@ -33,9 +36,18 @@ public class MyBatisCommonFactory {
 	public static void init() {
 		try {
 			String resource = "com/mybatis/MapperConfig.xml";
+			// IO패키지를 이용해서 읽어들임 - POJO방식 - 자원관리 책임이 개발자에게 있다.
+			// 순제어 <-> 역제어, 제어역전(스프링하고의 차별점)
 			Reader reader = Resources.getResourceAsReader(resource);
 			logger.info("before sqlSessionFactory : "+sqlSessionFactory);
-			if(sqlSessionFactory == null) { // 널이 아닐 때만 객체 주입을 새로 받는다.
+			// 싱글톤 패턴 - 사용자 정의 방식 처리하기 - 프레임워크를 만들 수도 있다. - 서블릿(HttpServlet상속)과 JSP
+			// 전통적인 방식 - A a = new A(); 이른 인스턴스화! 위치: 선언부(멤버) 
+			//					ApplicationContext, Annotation~ApplicationContext [스프링 컨테이너]
+			// A a = null; a = new A(); 게으른 인스턴스화! BeanFactory 컨테이너와 비슷.
+			if(sqlSessionFactory == null) { // 널일 때만 객체 주입을 새로 받는다. -> 조건에 따라 객체를 생성하는 것 -> 관리하기
+				// 생성자 뒤에 메소드가 호출됨
+				// 왜? >  1. @ComponentScan도 없고 객체관리도 직접해야함 > 정보를 읽어오기 위해선 xml문서에 적힌 문자열을 Read를 해야하는데, 
+				// 두 번째 파라미터는 id이다.
 				sqlSessionFactory = new SqlSessionFactoryBuilder().build(reader,"development");
 			}
 			logger.info("after sqlSessionFactory : "+sqlSessionFactory);

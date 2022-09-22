@@ -1,0 +1,41 @@
+package com.mvc.step3;
+
+import java.util.Map;
+
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.log4j.Logger;
+
+public class EmpDao {
+	Logger logger = Logger.getLogger(EmpDao.class);
+	SqlSessionFactory sqlSessionFactory = null;
+	SqlSession sqlSession = null;
+	
+// 	스프링에서 제공하는 SQLException 대신 사용하는 클래스
+	public void empInsert(Map<String, Object> emap) throws DataAccessException {
+		// 값이 제대로 들어오는지 확인하기 위해서 업데이트 직전에 파라미터 값 확인하기
+		logger.info(emap);
+		sqlSession.update("empInsert", emap);
+		public int boardMInsert(Map<String, Object> pMap) {
+			int result = 0;
+			try {
+				// MapperConfig에 등록된 서버 정보를 통해 커넥션을 연결
+				sqlSession = sqlSessionFactory.openSession();
+				// insert 메소드 대신 update를 사용한 것은 selectKey라는 속성으로
+				// insert 메소드의 리턴타입이 Object로 되어 있기 때문에 update를 사용한 것!
+				// delete를 사용해도 결과는 같음
+				// 사용자가 입력한 값을 HashMapBinder클래스를 통해 Map에 담고, insert문을 호출할 때 파라미터로 넘긴다.
+				result = sqlSession.update("boardMInsert", pMap);
+				// 물리적인 테이블에 등록하는 것이니 반드시 커밋할 것!!
+				sqlSession.commit();     
+				//insert here
+				logger.info("result: "+result);
+			} catch (Exception e) {
+				logger.info("Exception: " + e.toString());
+			} finally {
+				sqlSession.close();
+			}
+			return result;
+		}
+	}
+}
